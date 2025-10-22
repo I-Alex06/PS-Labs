@@ -16,4 +16,6 @@ axs[0].plot(time,sin(time))
 axs[1].plot(time,cos(time))
 
 fig.show()
+plt.savefig('ex1.pdf')
 plt.show()
+

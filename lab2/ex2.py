@@ -29,4 +29,5 @@ axs[3][0].plot(time,cos_noise(time,0,10))
 axs[3][1].plot(time,cos_noise(time,0,100))
 
 fig.show()
+plt.savefig('ex2.pdf')
 plt.show()

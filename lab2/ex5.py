@@ -12,7 +12,7 @@ def cos(t,frec):
 signal1=cos(time,100)
 signal2=cos(time,1000)
 signal3=np.concatenate((signal1,signal2))
-print(len(signal1),len(signal2),len(signal3))
+#print(len(signal1),len(signal2),len(signal3))
 sd.play(signal3,fs)
 sd.wait()
 #al doilea beep are o frecventa mai ridicata si pare mai scurt

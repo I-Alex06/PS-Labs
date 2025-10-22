@@ -26,4 +26,6 @@ axs[1].plot(time,ctime)
 axs[2].plot(time,btime+ctime)
 
 fig.show()
+pl.savefig('ex4.pdf')
+
 pl.show()
