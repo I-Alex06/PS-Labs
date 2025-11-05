@@ -9,7 +9,7 @@ fig.suptitle("Semnale")
 def cos(t,f):
     return np.cos(2*np.pi*f*t)
 time=np.arange(0,1,1/10000)
-time1=np.linspace(0,1,5)
+time1=np.linspace(0,1,6)[:-1]
 axs[0].plot(time,cos(time,21))
 axs[1].plot(time,cos(time,21))
 axs[1].stem(time1,cos(time1,21))
