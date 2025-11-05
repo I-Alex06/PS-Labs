@@ -13,12 +13,15 @@ time1=np.linspace(0,1,45)[:-1]
 axs[0].plot(time,cos(time,21))
 axs[1].plot(time,cos(time,21))
 axs[1].stem(time1,cos(time1,21))
+axs[1].axhline(0,color='r')
 
 axs[2].plot(time,cos(time,11))
 axs[2].stem(time1,cos(time1,11))
+axs[2].axhline(0,color='r')
 
 axs[3].plot(time,cos(time,1))
 axs[3].stem(time1,cos(time1,1))
+axs[3].axhline(0,color='r')
 
 fig.show()
 plt.savefig('lab4/ex3.pdf')
