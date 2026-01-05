@@ -1,0 +1,51 @@
+from scipy import misc, ndimage
+import numpy as np
+import matplotlib.pyplot as plt
+N=100
+n1=np.linspace(0,1,N)
+n2=np.linspace(0,1,N)
+
+fig,axs=plt.subplots(2)
+x =np.array([[np.sin(2*np.pi*n1[i] + 3*np.pi*n2[j]) for i in range(N)] for j in range(N)])
+axs[0].imshow(x, cmap=plt.cm.gray)
+y = np.fft.fft2(x)
+axs[1].imshow(20*np.log10(abs(y)))
+plt.title("sin(2pi*n1 +3pi*n2)")
+fig.tight_layout()
+plt.show()
+
+fig,axs=plt.subplots(2)
+x =np.array([[np.sin(4*np.pi*n1[i]) + np.cos(6*np.pi*n2[j]) for i in range(N)] for j in range(N)])
+axs[0].imshow(x, cmap=plt.cm.gray)
+y = np.fft.fft2(x)
+axs[1].imshow(20*np.log10(abs(y)))
+plt.title("sin(4pi*n1) + cos(6pi*n2)")
+fig.tight_layout()
+plt.show()
+
+fig,axs=plt.subplots(2)
+y=np.array([[1 if ((j==5 or j==N-5) and i==0) else 0 for i in range(N)] for j in range(N)])
+axs[0].imshow((y))
+x = np.real(np.fft.ifft2(y))
+axs[1].imshow(x, cmap=plt.cm.gray)
+plt.title("Y 0,5")
+fig.tight_layout()
+plt.show()
+
+fig,axs=plt.subplots(2)
+y=np.array([[1 if ((i==5 or i==N-5) and j==0) else 0 for i in range(N)] for j in range(N)])
+axs[0].imshow((y))
+x = np.real(np.fft.ifft2(y))
+axs[1].imshow(x, cmap=plt.cm.gray)
+plt.title("Y 5,0")
+fig.tight_layout()
+plt.show()
+
+fig,axs=plt.subplots(2)
+y=np.array([[1 if ((j==5 and i==5 ) or (i==N-5 and j==N-5 )) else 0 for i in range(N)] for j in range(N)])
+axs[0].imshow((y))
+x = np.real(np.fft.ifft2(y))
+axs[1].imshow(x, cmap=plt.cm.gray)
+plt.title("Y 5,5")
+fig.tight_layout()
+plt.show()

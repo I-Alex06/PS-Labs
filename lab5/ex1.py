@@ -20,9 +20,11 @@ x=np.fft.fft(counts)
 N=len(x)
 
 frec=fs*np.linspace(0,N/2,N//2)/N
+#c)
 print(f"c) {max(frec)}")
 print(fs/2)
 
+#d)
 xm=np.abs(x/N)[:N//2]
 
 plt.stem(frec,xm)
